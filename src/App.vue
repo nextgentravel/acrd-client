@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <Calculator msg="ACRD Calculator"/>
+    <div class="container">
+          <Calculator msg="Accommodation and Car Rental Directory"/>
+    </div>
   </div>
 </template>
 

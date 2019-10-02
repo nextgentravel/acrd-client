@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="main">
     <h1>{{ msg }}</h1>
     <form>
       <autocomplete
@@ -10,6 +10,7 @@
         :get-result-value="getResultValue"
         @submit="handleSubmit"
       ></autocomplete>
+      <br><br>
       <div v-if="result">
         <p><b>January - April:</b><br> {{this.result['01-04']}}</p>
         <p><b>May - August:</b><br> {{this.result['05-08']}}</p>
@@ -54,9 +55,11 @@ export default {
       return result
     },
     handleSubmit(result) {
-      let city = this.cityLookup[result];
+      let city = this.cityLookup[result] || result;
       console.log('CITY: ', city)
-      fetch(`http://localhost:5000/${city}/rules`)
+      let uri = `http://localhost:5000/${city.replace('/','sss')}/rules`
+      console.log(uri)
+      fetch(uri)
         .then(response => response.json())
         .then(data => {
           this.haveResult = true
