@@ -1,22 +1,26 @@
 <template>
   <div class="main">
-    <h1>{{ msg }}</h1>
-    <form>
-      <autocomplete
-        placeholder="Search ACRD"
-        aria-label="Search ACRD"
-        style="text-align: left;"
-        :search="search"
-        :get-result-value="getResultValue"
-        @submit="handleSubmit"
-      ></autocomplete>
-      <br><br>
-      <div v-if="result">
-        <p><b>January - April:</b><br> {{this.result['01-04']}}</p>
-        <p><b>May - August:</b><br> {{this.result['05-08']}}</p>
-        <p><b>September - December:</b><br> {{this.result['09-12']}}</p>
-      </div>
-    </form>
+    <h4>{{ msg }}</h4>
+    <p class="lead">Type in any destination in Canada to find the current hotel city rate limits</p>
+    <div v-if="loading">
+          <div class="spinner"></div>
+    </div>
+    <autocomplete
+      v-if="!loading"
+      placeholder="Search ACRD"
+      aria-label="Search ACRD"
+      style="text-align: left;"
+      :search="search"
+      :get-result-value="getResultValue"
+      @submit="handleSubmit"
+      auto-select
+    ></autocomplete>
+    <br><br>
+    <div v-if="result">
+      <p><b>January - April:</b><br> {{this.result['01-04']}}</p>
+      <p><b>May - August:</b><br> {{this.result['05-08']}}</p>
+      <p><b>September - December:</b><br> {{this.result['09-12']}}</p>
+    </div>
   </div>
 </template>
 
@@ -35,7 +39,6 @@ export default {
     fetchData () {
       this.error = this.post = null
       this.loading = true
-
       fetch('https://acrd-api.herokuapp.com/cities')
         .then(response => response.json())
         .then(data => {
@@ -99,4 +102,35 @@ li {
 a {
   color: #42b983;
 }
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 10px auto;
+  background-color: #333;
+
+  border-radius: 100%;  
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
 </style>
