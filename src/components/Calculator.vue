@@ -36,7 +36,7 @@ export default {
       this.error = this.post = null
       this.loading = true
 
-      fetch('http://acrd-api.herokuapp.com/cities')
+      fetch('https://acrd-api.herokuapp.com/cities')
         .then(response => response.json())
         .then(data => {
           this.loading = false
@@ -57,7 +57,7 @@ export default {
     handleSubmit(result) {
       let city = this.cityLookup[result] || result;
       console.log('CITY: ', city)
-      let uri = `http://acrd-api.herokuapp.com/${city.replace('/','sss')}/rules`
+      let uri = `https://acrd-api.herokuapp.com/${city.replace('/','sss')}/rules`
       console.log(uri)
       fetch(uri)
         .then(response => response.json())
