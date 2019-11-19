@@ -732,6 +732,11 @@
     error-stack-parser "^2.0.0"
     string-width "^2.0.0"
 
+"@trevoreyre/autocomplete-js@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@trevoreyre/autocomplete-js/-/autocomplete-js-2.0.2.tgz#06754db4ab945c8d21bbcbb7081fc6b860cca310"
+  integrity sha512-QSsQG4Wk2QNYGSy/6PcAjFOshkvHcKcaJYwKPJG2d4Fvp7M2hdjzouJIbVFcwuq5PPmmHIrlqrqGhFRUxzB66Q==
+
 "@trevoreyre/autocomplete-vue@^2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@trevoreyre/autocomplete-vue/-/autocomplete-vue-2.0.2.tgz#78c7ef9d95a233f65ec38cd5c52d59f531866a0d"

@@ -17,9 +17,18 @@
     ></autocomplete>
     <br><br>
     <div v-if="result">
-      <p><b>January - April:</b><br> {{this.result['01-04']}}</p>
-      <p><b>May - August:</b><br> {{this.result['05-08']}}</p>
-      <p><b>September - December:</b><br> {{this.result['09-12']}}</p>
+      <p><b>January:</b> {{this.result['January']}}</p>
+      <p><b>February:</b> {{this.result['February']}}</p>
+      <p><b>March:</b> {{this.result['March']}}</p>
+      <p><b>April:</b> {{this.result['April']}}</p>
+      <p><b>May:</b> {{this.result['May']}}</p>
+      <p><b>June:</b> {{this.result['June']}}</p>
+      <p><b>July:</b> {{this.result['July']}}</p>
+      <p><b>August:</b> {{this.result['August']}}</p>
+      <p><b>September:</b> {{this.result['September']}}</p>
+      <p><b>October:</b> {{this.result['October']}}</p>
+      <p><b>November:</b> {{this.result['November']}}</p>
+      <p><b>December:</b> {{this.result['December']}}</p>
     </div>
   </div>
 </template>
