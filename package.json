@@ -12,6 +12,7 @@
     "@trevoreyre/autocomplete-vue": "^2.0.2",
     "core-js": "^2.6.5",
     "express": "^4.17.1",
+    "serialize-javascript": "^2.1.2",
     "vue": "^2.6.10"
   },
   "devDependencies": {
